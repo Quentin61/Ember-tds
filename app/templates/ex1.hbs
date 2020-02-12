@@ -1,0 +1,20 @@
+<div style="width: 50%;margin-left: 25%;margin-right: 25%;margin-top: 10%">
+  <div class="card text-white bg-primary mb-3">
+    <div class="card-header">Note :</div>
+    <div class="card-body">
+      <div class="form-group">
+        <Textarea name="note" @value={{model.content}} maxlength={{model.MAX}} placeholder="Entrez votre texte" class="form-control"></Textarea>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-secondary" {{action "save" model}}>Enregistrer</button>
+  <button class="btn btn-secondary" {{action "clear" model}}>Effacer</button><br>
+  <div class="alert {{model.style}}">
+    Nombre de caractères restant : {{model.size}}
+  </div>
+  {{#if model.alertVisible}}
+    <div class="alert {{model.style}}"></div>
+  {{/if}}
+  <div class="alert alert-success">{{model.info}}</div>
+  {{outlet}}
+</div>
