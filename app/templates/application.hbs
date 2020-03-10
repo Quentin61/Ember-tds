@@ -1,5 +1,10 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
+<div class="ui top attached tabular menu">
+  <div class="active item" data-tab="one"></div>
+  <div class="center item" data-tab="two">Two</div>
+  <div class="item" data-tab="three">Three</div>
+</div>
+<div class="ui bottom attached active tab segment" data-tab="one">
+  <p></p>
+  <p></p>
+</div>
 {{outlet}}

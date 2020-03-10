@@ -29,10 +29,14 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.contentSecurityPolicy = {
+      // ... other stuff here
+      'connect-src': "'self' http://127.0.0.1:8080"
+    };
   }
 
   if (environment === 'test') {
-    // Testem prefers this...
+
     ENV.locationType = 'none';
 
     // keep test console output quieter
