@@ -1,6 +1,6 @@
 ## Description
 
-Ceci est un dépot GIT qui a été créé dans le cadre de ma formation au DUT informatique. l'ensemble des branches sont des exercices réalisés avec Ember-JS. La branche Master et contient les fichiers nécessaire pour démarer un projet (squelette).
+Ceci est un dépot GIT qui a été créé dans le cadre de ma formation au DUT informatique. L'ensemble des branches sont des exercices réalisés avec Ember-JS. La branche Master contient les fichiers nécessaire pour démarer un projet (squelette).
 
 ## Outils requis 
 
