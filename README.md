@@ -23,6 +23,3 @@ Pour commencer un projet avec la branche Master, utilisez la commande suivante :
 ```
 npm install
 ```
-## Auteur 
-
-Quentin Carré
