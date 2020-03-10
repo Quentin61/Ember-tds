@@ -11,7 +11,7 @@ Pour installer ember-cli en version 3.12, executez la commande :
 npm install -g ember-cli@3.12
 ```
 
-Pour installer [Fomentic-UI](https://fomantic-ui.com/), executez la commande :
+Pour installer [Fomantic-UI](https://fomantic-ui.com/), executez la commande :
 
 ```
 ember install semantic-ui-ember
