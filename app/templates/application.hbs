@@ -1,10 +1,12 @@
-<div class="ui top attached tabular menu">
-  <div class="active item" data-tab="one"></div>
-  <div class="center item" data-tab="two">Two</div>
-  <div class="item" data-tab="three">Three</div>
-</div>
-<div class="ui bottom attached active tab segment" data-tab="one">
-  <p></p>
-  <p></p>
+<div class="ui container">
+  <div class="ui secondary  menu">
+    <a class="active item" href="#" >
+      Home
+    </a>
+    <LinkTo class="item" @route="projects">
+      Projects
+    </LinkTo>
+    <LinkTo class="item" @route="developers">Developer</LinkTo >
+  </div>
 </div>
 {{outlet}}
