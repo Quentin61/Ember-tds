@@ -3,5 +3,6 @@ const { Model } = DS;
 
 export default Model.extend({
     identity : DS.attr('string'),
-    project : DS.hasMany('project')
+    project : DS.hasMany('project'),
+    story : DS.hasMany('story')
 });

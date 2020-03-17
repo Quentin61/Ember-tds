@@ -7,4 +7,5 @@ export default Model.extend({
     startDate : DS.attr('utc'),
     dueDate : DS.attr('utc'),
     developer : DS.belongsTo('developer'),
+    story : DS.hasMany('story')
 });
