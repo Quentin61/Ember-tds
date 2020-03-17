@@ -1,0 +1,33 @@
+<div class="ui container">
+  <form class="ui form">
+    <div class="field">
+      <label>Nom</label>
+      <Input type="text" @value={{model.project.name}} placeholder="Entrer votre nom"></Input>
+    </div>
+    <div class="field">
+      <label>Description</label>
+      <Textarea @value={{model.project.detail}} placeholder="Entrer une description"></Textarea>
+    </div>
+    <div class="field">
+      <label>Date de début</label>
+      <Input type="date" @value={{model.project.startDate}}></Input>
+    </div>
+    <div class="field">
+      <label>Date de fin</label>
+      <Input type="date" @value={{model.project.dueDate}}></Input>
+    </div>
+    {{#ui-dropdown class="selection" selected=model.project.developer onChange=(action (mut model.project.developer))as |execute mapper|}}
+      <div class="default text">Developer</div>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        {{#each model.developer as |developer|}}
+          <div data-value="{{map-value mapper developer}}" class="item">
+            {{developer.identity}}
+          </div>
+        {{/each}}
+      </div>
+    {{/ui-dropdown}}
+    <button class="ui button" type="submit" {{action "new" model.project}}>Ajouter</button>
+  </form>
+</div>
+{{outlet}}

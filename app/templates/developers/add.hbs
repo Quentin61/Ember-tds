@@ -1,0 +1,10 @@
+<div class="ui container">
+  <form class="ui form">
+    <div class="field">
+      <label>Identité</label>
+      <Input type="text" name="first-name" @value={{this.name}} placeholder="Entrer votre nom"></Input>
+    </div>
+    <button class="ui button" type="submit" {{action "add" this.name}}>Ajouter</button>
+  </form>
+</div>
+{{outlet}}

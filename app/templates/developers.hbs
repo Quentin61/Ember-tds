@@ -1,0 +1,24 @@
+<div class="ui container">
+  <LinkTo class="ui button" @route="developers.add">
+    Ajouter un développeur
+  </LinkTo>
+  <table class="ui celled table striped">
+    <thead>
+      <tr>
+        <th>Identity</th>
+        <th>Éditer</th>
+        <th>Supprimer</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each model as |developer|}}
+      <tr>
+        <td data-label="Name">{{developer.identity}}</td>
+        <td><LinkTo class="circular ui icon button inverted grey" @route="developers.edit" @model={{developer}}><i class="icon edit grey"></i></LinkTo></td>
+        <td><LinkTo class="circular ui icon button inverted red" @route="developers.delete" @model={{developer}}><i class="icon times"></i></LinkTo></td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>
+{{outlet}}

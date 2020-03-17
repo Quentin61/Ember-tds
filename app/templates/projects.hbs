@@ -1,0 +1,30 @@
+<div class="ui container">
+  <LinkTo class="ui button" @route="projects.new">
+    Ajouter un projet
+  </LinkTo>
+  <table class="ui celled table striped">
+    <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Date de début</th>
+      <th>Date de fin</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each model as |project|}}
+      <tr>
+        <td>{{project.name}}</td>
+        <td>{{project.detail}}</td>
+        <td>{{moment-format project.startDate "YYYY-MM-DD"}}</td>
+        <td>{{moment-format project.dueDate "YYYY-MM-DD"}}</td>
+        <td><LinkTo class="circular ui icon button inverted grey" @route="projects.edit" @model={{project.id}}><i class="icon edit grey"></i></LinkTo></td>
+        <td><LinkTo class="circular ui icon button inverted red" @route="projects.delete" @model={{project.id}}><i class="icon times"></i></LinkTo></td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>
+{{outlet}}
