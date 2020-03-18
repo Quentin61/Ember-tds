@@ -7,6 +7,10 @@ export default Route.extend({
       edit(project) {
         let self = this;
         project.save().then(() => self.transitionTo("projects"));
+      },
+      cancel()
+      {
+        this.transitionTo('projects')
       }
     },
   model(id)

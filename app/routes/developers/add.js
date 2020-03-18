@@ -10,6 +10,10 @@ export default Route.extend({
           {
             identity : name
           }).save().then(() => self.transitionTo('developers'));
+      },
+      cancel()
+      {
+        this.transitionTo('developers')
       }
     }
 });

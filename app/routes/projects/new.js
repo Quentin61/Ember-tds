@@ -9,6 +9,10 @@ export default Route.extend({
       {
         let self = this;
         this.get('store').createRecord('project',project).save().then(() => self.transitionTo('projects'));
+      },
+      cancel()
+      {
+        this.transitionTo('projects')
       }
     },
     model()

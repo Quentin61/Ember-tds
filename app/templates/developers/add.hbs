@@ -5,6 +5,7 @@
       <Input type="text" name="first-name" @value={{this.name}} placeholder="Entrer votre nom"></Input>
     </div>
     <button class="ui button" type="submit" {{action "add" this.name}}>Ajouter</button>
+    <button class="ui button" type="submit" {{action "cancel"}}>Annuler</button>
   </form>
 </div>
 {{outlet}}

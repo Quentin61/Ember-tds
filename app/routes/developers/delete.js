@@ -11,6 +11,10 @@ export default Route.extend({
         this.get('store').findRecord('developer', developer.id, {reload: true}).then(function (developer) {
           developer.destroyRecord().then(()=> self.transitionTo('developers'));
         });
+      },
+      cancel()
+      {
+        this.transitionTo('developers')
       }
     }
 });

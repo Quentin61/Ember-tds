@@ -5,6 +5,7 @@
       <Input type="text" name="first-name" @value={{this.name}} value={{model.identity}}></Input>
     </div>
     <button class="ui button" type="submit" {{action "edit" this.name model}}>Enregistrer</button>
+    <button class="ui button" type="submit" {{action "cancel"}}>Annuler</button>
   </form>
 </div>
 {{outlet}}

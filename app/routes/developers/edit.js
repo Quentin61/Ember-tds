@@ -14,6 +14,10 @@ export default Route.extend({
           developer.set('identity',name);
           self.transitionTo('developers');
       })
+    },
+    cancel()
+    {
+      this.transitionTo('developers')
     }
   }
 });

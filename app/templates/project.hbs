@@ -1,15 +1,15 @@
 <div class="ui container">
-  <LinkTo class="ui button" @route="projects.new">
+  <LinkTo class="ui button"  @route="story.new" @model={{model.project}}>
     Ajouter une story
   </LinkTo>
-  {{#each model as |story|}}
+  {{#each model.story as |story|}}
   <div class="ui icon message">
     <i class="file icon"></i>
     <div class="content">
       <div class="header">
-        Have you heard about our mailing list?
+        {{story.code}}
       </div>
-      <p>Get the best news in your e-mail every day.</p>
+      <p>{{story.detail}}</p>
     </div>
   </div>
     {{/each}}

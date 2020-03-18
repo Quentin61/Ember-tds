@@ -9,6 +9,10 @@ export default Route.extend({
         this.get('store').findRecord('project', project.id, {reload: true}).then(function (project) {
           project.destroyRecord().then(()=> self.transitionTo('projects'));
         });
+      },
+      cancel()
+      {
+        this.transitionTo('projects')
       }
     },
   model(id)

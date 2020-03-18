@@ -11,6 +11,7 @@
       <th>Date de fin</th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
         <td>{{moment-format project.dueDate "YYYY-MM-DD"}}</td>
         <td><LinkTo class="circular ui icon button inverted grey" @route="projects.edit" @model={{project.id}}><i class="icon edit grey"></i></LinkTo></td>
         <td><LinkTo class="circular ui icon button inverted red" @route="projects.delete" @model={{project.id}}><i class="icon times"></i></LinkTo></td>
+        <td><LinkTo class="circular ui icon button inverted grey" @route="project" @model={{project.id}}><i class="icon eye grey"></i></LinkTo></td>
       </tr>
     {{/each}}
     </tbody>
