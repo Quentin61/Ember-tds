@@ -26,9 +26,15 @@
           </div>
         {{/each}}
       </div>
-    {{/ui-dropdown}}
-    <button class="ui button" type="submit" {{action "new" model.project}}>Ajouter</button>
-    <button class="ui button" type="submit" {{action "cancel"}}>Annuler</button>
+    {{/ui-dropdown}}<br>
+    <div class="ui message">
+      <div class="header">
+        Ajout d'un projet
+      </div>
+      <p>Voulez-vous ajouter ce projet ?</p>
+      <button class="ui button green" type="submit" {{action "new" model.project}}>Ajouter</button>
+      <button class="ui button red" type="submit" {{action "cancel"}}>Annuler</button>
+    </div>
   </form>
 </div>
 {{outlet}}

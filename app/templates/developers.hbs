@@ -1,6 +1,15 @@
 <div class="ui container">
-  <LinkTo class="ui button" @route="developers.add">
-    Ajouter un développeur
+  <div class="ui icon message">
+    <i class="calendar alternate icon"></i>
+    <div class="content">
+      <div class="header">
+        model\developers
+      </div>
+      <p>Administration des données</p>
+    </div>
+  </div>
+  <LinkTo class="ui button orange" @route="developers.add">
+    <i class="plus icon"></i> Ajouter un développeur
   </LinkTo>
   <table class="ui celled table striped">
     <thead>

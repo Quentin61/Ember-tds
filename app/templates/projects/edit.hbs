@@ -27,8 +27,14 @@
         {{/each}}
       </div>
     {{/ui-dropdown}}
-    <button class="ui button" type="submit" {{action "edit" model.project}}>Modifier</button>
-    <button class="ui button" type="submit" {{action "cancel"}}>Annuler</button>
+    <div class="ui message">
+      <div class="header">
+        Modification d'un projet
+      </div>
+      <p>Voulez-vous modifier ce projet ?</p>
+      <button class="ui button yellow" type="submit" {{action "edit" model.project}}>Modifier</button>
+      <button class="ui button red" type="submit" {{action "cancel"}}>Annuler</button>
+    </div>
   </form>
 </div>
 {{outlet}}

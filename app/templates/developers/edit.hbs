@@ -4,8 +4,14 @@
       <label>Identité</label>
       <Input type="text" name="first-name" @value={{this.name}} value={{model.identity}}></Input>
     </div>
-    <button class="ui button" type="submit" {{action "edit" this.name model}}>Enregistrer</button>
-    <button class="ui button" type="submit" {{action "cancel"}}>Annuler</button>
+    <div class="ui message">
+      <div class="header">
+        Modification du profil d'un developpeur
+      </div>
+      <p>Voulez-vous modifier ce développeur ?</p>
+      <button class="ui button yellow" type="submit" {{action "edit" this.name model}}>Enregistrer</button>
+      <button class="ui button red" type="submit" {{action "cancel"}}>Annuler</button>
+    </div>
   </form>
 </div>
 {{outlet}}

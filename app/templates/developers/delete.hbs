@@ -1,7 +1,13 @@
-<div class="ui container red">
-  <button class="ui button" {{action "delete" model}}>
-    Supprimer ?
-  </button>
-  <button class="ui button" type="submit" {{action "cancel"}}>Annuler</button>
+<div class="ui container">
+  <div class="ui message">
+    <div class="header">
+      Suppresion d'un développeur
+    </div>
+    <p>Voulez-vous supprimer ce développeur ?</p>
+    <button class="ui button red" {{action "delete" model}}>
+      Supprimer ?
+    </button>
+    <button class="ui button grey" type="submit" {{action "cancel"}}>Annuler</button>
+  </div>
 </div>
 {{outlet}}

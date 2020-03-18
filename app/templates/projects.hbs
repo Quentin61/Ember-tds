@@ -1,6 +1,15 @@
 <div class="ui container">
-  <LinkTo class="ui button" @route="projects.new">
-    Ajouter un projet
+  <div class="ui icon message">
+    <i class="table icon"></i>
+    <div class="content">
+      <div class="header">
+        model\projects
+      </div>
+      <p>Administration des projets</p>
+    </div>
+  </div>
+  <LinkTo class="ui button orange" @route="projects.new">
+    <i class="plus icon"></i> Ajouter un projet
   </LinkTo>
   <table class="ui celled table striped">
     <thead>

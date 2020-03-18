@@ -1,6 +1,6 @@
 <div class="ui container">
-  <LinkTo class="ui button"  @route="story.new" @model={{model.project}}>
-    Ajouter une story
+  <LinkTo class="ui button orange"  @route="story.new" @model={{model.project}}>
+    <i class="plus icon"></i> Ajouter une story
   </LinkTo>
   {{#each model.story as |story|}}
   <div class="ui icon message">

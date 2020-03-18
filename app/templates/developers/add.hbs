@@ -4,8 +4,14 @@
       <label>Identité</label>
       <Input type="text" name="first-name" @value={{this.name}} placeholder="Entrer votre nom"></Input>
     </div>
-    <button class="ui button" type="submit" {{action "add" this.name}}>Ajouter</button>
-    <button class="ui button" type="submit" {{action "cancel"}}>Annuler</button>
+    <div class="ui message">
+      <div class="header">
+        Ajout d'un développeur
+      </div>
+      <p>Voulez-vous ajouter ce développeur ?</p>
+      <button class="ui button green" type="submit" {{action "add" this.name}}>Ajouter</button>
+      <button class="ui button red" type="submit" {{action "cancel"}}>Annuler</button>
+    </div>
   </form>
 </div>
 {{outlet}}
