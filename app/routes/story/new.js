@@ -16,10 +16,9 @@ export default Route.extend({
     {
       new(story, id)
       {
-        /*let self = this;
+        let self = this;
         let project = this.get('store').findRecord('developer', id.project_id);
-        let arrayStories = project.get('story');
-        let finalArray = arrayStories.concat(story);*/
+        project.get('stories').pushObject(story);
       },
       cancel()
       {
