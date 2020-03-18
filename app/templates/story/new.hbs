@@ -1,0 +1,32 @@
+<div class="ui container">
+  <form class="ui form">
+    <div class="field">
+      <label>Code</label>
+      <Input type="text" @value={{model.story.name}} placeholder="Entrer votre nom"></Input>
+    </div>
+    <div class="field">
+      <label>Description</label>
+      <Textarea @value={{model.story.detail}} placeholder="Entrer une description"></Textarea>
+    </div>
+    {{#ui-dropdown class="selection" selected=model.story.developer onChange=(action (mut model.story.developer))as |execute mapper|}}
+      <div class="default text">Developer</div>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        {{#each model.developer as |developer|}}
+          <div data-value="{{map-value mapper developer}}" class="item">
+            {{developer.identity}}
+          </div>
+        {{/each}}
+      </div>
+    {{/ui-dropdown}}
+    <div class="ui message">
+      <div class="header">
+        Ajout d'un projet
+      </div>
+      <p>Voulez-vous ajouter un projet ?</p>
+      <button class="ui button green" type="submit" {{action "new" model.story model.project}}>Ajouter</button>
+      <button class="ui button red" type="submit" {{action "cancel"}}>Annuler</button>
+    </div>
+  </form>
+</div>
+{{outlet}}
