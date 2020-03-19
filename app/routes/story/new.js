@@ -18,6 +18,10 @@ export default Route.extend({
       {
         let self = this;
         let project = this.get('store').findRecord('developer', id.project_id);
+        if(project.get('stories')===undefined)
+        {
+          project.set('stories', "[]").save();
+        }
         project.get('stories').pushObject(story);
       },
       cancel()
