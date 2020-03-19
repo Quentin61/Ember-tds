@@ -19,12 +19,39 @@
         {{/each}}
       </div>
     {{/ui-dropdown}}<br>
+    <div class="ui action input">
+      <Input @value={{model.tag.title}} placeholder="tags..."></Input>
+      {{#ui-dropdown class="selection" selected=model.tag.color onChange=(action (mut model.tag.color))as |execute mapper|}}
+        <div class="default text">colors...</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          {{#each model.color as |color|}}
+            <div data-value="{{map-value mapper color}}" class="item">
+              {{color}}
+            </div>
+          {{/each}}
+        </div>
+      {{/ui-dropdown}}<br>
+      <button class="ui button grey" type="submit" {{action "addTag" model.tag}}>Ajouter</button>
+    </div>
+    {{#ui-dropdown class="fluid multiple selection" selected=model.tags onChange=(action (mut model.tags)) as |execute mapper|}}
+      <i class="dropdown icon"></i>
+      <div class="default text">selctionner un tag</div>
+      <div class="menu">
+        {{#each model.tags as |tag|}}
+          <div data-value="{{map-value mapper tag}}" class="item">
+            <a class="ui {{tag.color}} empty circular label"></a>
+            {{tag.title}}
+          </div>
+        {{/each}}
+      </div>
+    {{/ui-dropdown}}
     <div class="ui message">
       <div class="header">
         Ajout d'un projet
       </div>
       <p>Voulez-vous ajouter un projet ?</p>
-      <button class="ui button green" type="submit" {{action "new" model.story model.project}}>Ajouter</button>
+      <button class="ui button green" type="submit" {{action "new" model.story model.project model.tags}}>Ajouter</button>
       <button class="ui button red" type="submit" {{action "cancel"}}>Annuler</button>
     </div>
   </form>

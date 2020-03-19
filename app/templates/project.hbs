@@ -20,6 +20,11 @@
       </div>
       <p>{{story.detail}}</p>
       <p>{{story.developer.identity}}</p>
+      {{#each story.tags as |tag|}}
+      <a class="item">
+        <div class="ui {{tag.color}} horizontal label">{{tag.title}}</div>
+      </a>
+      {{/each}}
     </div>
   </div>
     {{/each}}
