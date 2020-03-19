@@ -2,11 +2,14 @@ import Route from '@ember/routing/route';
 import RSVP from 'rsvp';
 
 export default Route.extend({
-  model(id)
+  model(project)
   {
     return RSVP.hash({
-      project : id.project_id,
-      story : this.get('store').findRecord('project', id.project_id).get('story')
+      project : this.get('store').findRecord('project',project.project_id),
+      story: this.get('store').query('story', {
+        filter: {
+          project: project.project_id
+        }})
     });
   }
 });

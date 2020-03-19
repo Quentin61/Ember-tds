@@ -4,25 +4,22 @@ import RSVP from 'rsvp';
 
 export default Route.extend({
 
-  model(id)
+  model(project)
   {
-    //let developer = this.get('store').findAll('developer');
     return RSVP.hash({
+      developer : this.get('store').findAll('developer'),
       story : EmberObject.create(),
-      project : id
+      project : this.get('store').findRecord('project',project.project_id)
     })
   },
   actions:
     {
-      new(story, id)
+      new(story, project)
       {
-        let self = this;
-        let project = this.get('store').findRecord('developer', id.project_id);
-        if(project.get('stories')===undefined)
-        {
-          project.set('stories', "[]").save();
-        }
-        project.get('stories').pushObject(story);
+        story.set('project',project);
+        this.get('store').createRecord('story', story).save().then(()=>
+            this.transitionTo('project',project.id)
+        );
       },
       cancel()
       {

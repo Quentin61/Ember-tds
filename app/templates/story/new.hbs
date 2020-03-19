@@ -2,7 +2,7 @@
   <form class="ui form">
     <div class="field">
       <label>Code</label>
-      <Input type="text" @value={{model.story.name}} placeholder="Entrer votre nom"></Input>
+      <Input type="text" @value={{model.story.code}} placeholder="Entrer votre nom"></Input>
     </div>
     <div class="field">
       <label>Description</label>
@@ -18,7 +18,7 @@
           </div>
         {{/each}}
       </div>
-    {{/ui-dropdown}}
+    {{/ui-dropdown}}<br>
     <div class="ui message">
       <div class="header">
         Ajout d'un projet
