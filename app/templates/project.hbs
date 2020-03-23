@@ -19,12 +19,21 @@
         {{story.code}}
       </div>
       <p>{{story.detail}}</p>
-      <p>{{story.developer.identity}}</p>
       {{#each story.tags as |tag|}}
       <a class="item">
         <div class="ui {{tag.color}} horizontal label">{{tag.title}}</div>
       </a>
       {{/each}}
+      <div class="right aligned">
+        <div class="ui right labeled button" tabindex="0">
+          <a class="ui basic right pointing label">
+            {{story.developer.identity}}
+          </a>
+          <LinkTo class="ui button right" @route="story.edit" @model={{story.id}}>
+            <i class="user icon"></i> Modifier
+          </LinkTo>
+        </div>
+      </div>
     </div>
   </div>
     {{/each}}
